@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="{% block html_lang %}{{ DEFAULT_LANG }}{% endblock html_lang %}">
+<head>
+    {% block head %}
+    <title>{% block title %}{{ SITENAME|striptags }}{% endblock title %}</title>
+    <meta charset="utf-8" />
+    <meta name="generator" content="Pelican" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% if SITESUBTITLE %}
+    <meta name="description" content="{{ SITESUBTITLE }}" />
+    {% endif %}
+    {% if STYLESHEET_URL %}
+    <link rel="stylesheet" type="text/css" href="{{ STYLESHEET_URL }}" />
+    {% endif %}
+    {% if FEED_ALL_ATOM %}
+    <link href="{{ FEED_DOMAIN }}/{% if FEED_ALL_ATOM_URL %}{{ FEED_ALL_ATOM_URL }}{% else %}{{ FEED_ALL_ATOM }}{% endif %}" type="application/atom+xml" rel="alternate" title="{{ SITENAME|striptags }} Full Atom Feed" />
+    {% endif %}
+    {% if FEED_ALL_RSS %}
+    <link href="{{ FEED_DOMAIN }}/{% if FEED_ALL_RSS_URL %}{{ FEED_ALL_RSS_URL }}{% else %}{{ FEED_ALL_RSS }}{% endif %}" type="application/rss+xml" rel="alternate" title="{{ SITENAME|striptags }} Full RSS Feed" />
+    {% endif %}
+    {% if FEED_ATOM %}
+    <link href="{{ FEED_DOMAIN }}/{%if FEED_ATOM_URL %}{{ FEED_ATOM_URL }}{% else %}{{ FEED_ATOM }}{% endif %}" type="application/atom+xml" rel="alternate" title="{{ SITENAME|striptags }} Atom Feed" />
+    {% endif %}
+    {% if FEED_RSS %}
+    <link href="{{ FEED_DOMAIN }}/{% if FEED_RSS_URL %}{{ FEED_RSS_URL }}{% else %}{{ FEED_RSS }}{% endif %}" type="application/rss+xml" rel="alternate" title="{{ SITENAME|striptags }} RSS Feed" />
+    {% endif %}
+    {% if CATEGORY_FEED_ATOM and category %}
+    <link href="{{ FEED_DOMAIN }}/{% if CATEGORY_FEED_ATOM_URL %}{{ CATEGORY_FEED_ATOM_URL.format(slug=category.slug) }}{% else %}{{ CATEGORY_FEED_ATOM.format(slug=category.slug) }}{% endif %}" type="application/atom+xml" rel="alternate" title="{{ SITENAME|striptags }} Categories Atom Feed" />
+    {% endif %}
+    {% if CATEGORY_FEED_RSS and category %}
+    <link href="{{ FEED_DOMAIN }}/{% if CATEGORY_FEED_RSS_URL %}{{ CATEGORY_FEED_RSS_URL.format(slug=category.slug) }}{% else %}{{ CATEGORY_FEED_RSS.format(slug=category.slug) }}{% endif %}" type="application/rss+xml" rel="alternate" title="{{ SITENAME|striptags }} Categories RSS Feed" />
+    {% endif %}
+    {% if TAG_FEED_ATOM and tag %}
+    <link href="{{ FEED_DOMAIN }}/{% if TAG_FEED_ATOM_URL %}{{ TAG_FEED_ATOM_URL.format(slug=tag.slug) }}{% else %}{{ TAG_FEED_ATOM.format(slug=tag.slug) }}{% endif %}" type="application/atom+xml" rel="alternate" title="{{ SITENAME|striptags }} Tags Atom Feed" />
+    {% endif %}
+    {% if TAG_FEED_RSS and tag %}
+    <link href="{{ FEED_DOMAIN }}/{% if TAG_FEED_RSS_URL %}{{ TAG_FEED_RSS_URL.format(slug=tag.slug) }}{% else %}{{ TAG_FEED_RSS.format(slug=tag.slug) }}{% endif %}" type="application/rss+xml" rel="alternate" title="{{ SITENAME|striptags }} Tags RSS Feed" />
+    {% endif %}
+    {% endblock head %}
+    <link rel="stylesheet" href="/theme/css/patternfly.min.css">
+</head>
+
+<body>
+  <div class="pf-v5-c-page">
+    <div class="pf-v5-c-skip-to-content">
+      <a class="pf-v5-c-button pf-m-primary" href="#main-content-nav-basic-example">Skip to content</a>
+    </div>
+    <header class="pf-v5-c-masthead" id="nav-basic-example-masthead">
+      <span class="pf-v5-c-masthead__toggle">
+        <button
+          class="pf-v5-c-button pf-m-plain"
+          type="button"
+          aria-label="Global navigation"
+        >
+          <i class="fas fa-bars" aria-hidden="true"></i>
+        </button>
+      </span>
+      <div class="pf-v5-c-masthead__main">
+        <a class="pf-v5-c-masthead__brand" href="{{ SITEURL }}/">
+          {{ SITENAME }}
+        </a>
+      </div>
+      <div class="pf-v5-c-masthead__content">
+        <div
+          class="pf-v5-c-toolbar pf-m-full-height pf-m-static"
+          id="nav-basic-example-masthead-toolbar"
+        >
+          <div class="pf-v5-c-toolbar__content">
+            <div class="pf-v5-c-toolbar__content-section">
+              <div
+                class="pf-v5-c-toolbar__group pf-m-icon-button-group pf-m-align-right pf-m-spacer-none pf-m-spacer-md-on-md"
+              >
+                <div
+                  class="pf-v5-c-toolbar__group pf-m-icon-button-group pf-m-hidden pf-m-visible-on-lg"
+                >
+                  <div class="pf-v5-c-toolbar__item">
+                    <button
+                      class="pf-v5-c-menu-toggle pf-m-plain"
+                      type="button"
+                      aria-expanded="false"
+                      aria-label="Application launcher"
+                    >
+                      <i class="fas fa-th" aria-hidden="true"></i>
+                    </button>
+                  </div>
+                  <div class="pf-v5-c-toolbar__item">
+                    <button
+                      class="pf-v5-c-menu-toggle pf-m-plain"
+                      type="button"
+                      aria-expanded="false"
+                      aria-label="Settings"
+                    >
+                      <i class="fas fa-cog" aria-hidden="true"></i>
+                    </button>
+                  </div>
+                  <div class="pf-v5-c-toolbar__item">
+                    <button
+                      class="pf-v5-c-menu-toggle pf-m-plain"
+                      type="button"
+                      aria-expanded="false"
+                      aria-label="Help"
+                    >
+                      <i class="fas fa-question-circle" aria-hidden="true"></i>
+                    </button>
+                  </div>
+                </div>
+                <div class="pf-v5-c-toolbar__item pf-m-hidden-on-lg">
+                  <button
+                    class="pf-v5-c-menu-toggle pf-m-plain"
+                    type="button"
+                    aria-expanded="false"
+                    aria-label="Actions"
+                  >
+                    <i class="fas fa-ellipsis-v" aria-hidden="true"></i>
+                  </button>
+                </div>
+              </div>
+              <!-- No login -->
+              <!-- <div class="pf-v5-c-toolbar__item pf-m-hidden pf-m-visible-on-sm">
+                <button
+                  class="pf-v5-c-menu-toggle pf-m-full-height"
+                  type="button"
+                  aria-expanded="false"
+                >
+                  <span class="pf-v5-c-menu-toggle__icon">
+                    <img
+                      class="pf-v5-c-avatar"
+                      alt="Avatar image"
+                      src="/theme/images/img_avatar-light.svg"
+                    />
+                  </span>
+                  <span class="pf-v5-c-menu-toggle__text">Ned Username</span>
+                  <span class="pf-v5-c-menu-toggle__controls">
+                    <span class="pf-v5-c-menu-toggle__toggle-icon">
+                      <i class="fas fa-caret-down" aria-hidden="true"></i>
+                    </span>
+                  </span>
+                </button>
+              </div> -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+    <div class="pf-v5-c-page__sidebar">
+      <div class="pf-v5-c-page__sidebar-body">
+        <nav
+          class="pf-v5-c-nav"
+          id="nav-basic-example-primary-nav"
+          aria-label="Global"
+        >
+          <ul class="pf-v5-c-nav__list" role="list">
+            <li class="pf-v5-c-nav__item">
+              <a href="#" class="pf-v5-c-nav__link">System panel</a>
+            </li>
+            <li class="pf-v5-c-nav__item">
+              <a
+                href="#"
+                class="pf-v5-c-nav__link pf-m-current"
+                aria-current="page"
+              >Policy</a>
+            </li>
+            <li class="pf-v5-c-nav__item">
+              <a href="#" class="pf-v5-c-nav__link">Authentication</a>
+            </li>
+            <li class="pf-v5-c-nav__item">
+              <a href="#" class="pf-v5-c-nav__link">Network services</a>
+            </li>
+            <li class="pf-v5-c-nav__item">
+              <a href="#" class="pf-v5-c-nav__link">Server</a>
+            </li>
+        <!-- TOOD: Consider adding the headings.-->
+        {% for title, link in MENUITEMS %}
+          <li class="pf-v5-c-nav__item">
+            <a href="{{ link }}"  class="pf-v5-c-nav__link">{{ title }}</a>
+          </li>
+        {% endfor %}
+        {% if DISPLAY_PAGES_ON_MENU %}
+          {% for p in pages %}
+            <li class="pf-v5-c-nav__item">
+              <a href="{{ SITEURL }}/{{ p.url }}" class="pf-v5-c-nav__link" {% if p==page %} aria-current="page" {% endif %}>{{ p.title }}</a>
+            </li>
+          {% endfor %}
+        </ul>
+        {% endif %}
+        {% if DISPLAY_CATEGORIES_ON_MENU %}
+          <section class="pf-v5-c-nav__section" aria-labelledby="grouped-nav-catagories">
+            <h2 class="pf-v5-c-nav__section-title" id="grouped-nav-catagories">Categories</h2>
+            <ul class="pf-v5-c-nav__list" role="list">
+            {% for cat, null in categories %}
+              <li class="pf-v5-c-nav__item"></li>
+                <a href="{{ SITEURL }}/{{ cat.url }}" class="pf-v5-c-nav__link" {% if cat==category %} aria-current="page" {% endif %}>{{ cat }}</a>
+            </li>
+            {% endfor %}
+        {% endif %}
+        </section>
+        </nav>
+      </div>
+    </div>
+    <main
+      class="pf-v5-c-page__main"
+      tabindex="-1"
+      id="main-content-nav-basic-example"
+      role="main"
+    >
+
+      <!-- If breadcrumbs were useful, use it here. -->
+
+      <section class="pf-v5-c-page__main-section pf-m-limit-width pf-m-light">
+        <div class="pf-v5-c-page__main-body">
+          <div class="pf-v5-c-content">
+            {% block content %}
+            {% endblock %}
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+</body>
+</html>

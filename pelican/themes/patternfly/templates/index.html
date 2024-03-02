@@ -1,0 +1,100 @@
+{% extends "base.html" %}
+{% block content %}
+{% block content_title %}
+<h1>All articles</h1>
+{% endblock %}
+
+<div class="pf-v5-c-divider" role="separator"></div>
+<section class="pf-v5-c-page__main-section pf-m-no-padding">
+  <!-- Drawer -->
+  <div class="pf-v5-c-drawer pf-m-inline-on-2xl">
+    <div class="pf-v5-c-drawer__main">
+      <!-- Content -->
+      <div class="pf-v5-c-drawer__content">
+        <div class="pf-v5-c-drawer__body">
+          <div
+            class="pf-v5-c-toolbar pf-m-page-insets"
+            id="primary-detail-collapsed-example-drawer-toolbar"
+          >
+            <!-- Toolbar would go here -->
+          <ul
+            class="pf-v5-c-data-list"
+            role="list"
+            aria-label="Article List"
+            id="primary-detail-collapsed-example-data-list"
+          >
+
+          {% for article in articles_page.object_list %}
+          <li
+          class="pf-v5-c-data-list__item"
+          aria-labelledby="primary-detail-collapsed-example-data-list-item-1"
+        >
+          <div class="pf-v5-c-data-list__item-row">
+            <div class="pf-v5-c-data-list__item-content">
+              <div class="pf-v5-c-data-list__cell pf-m-align-left">
+                <div
+                  class="pf-v5-l-flex pf-m-column pf-m-space-items-md"
+                >
+                  <div
+                    class="pf-v5-l-flex pf-m-column pf-m-space-items-none"
+                  >
+                    <div class="pf-v5-l-flex__item">
+                      <header> <h2><a href="{{ SITEURL }}/{{ article.url }}" rel="bookmark" title="Permalink to {{ article.title|striptags }}">{{ article.title }}</a></h2> </header>
+                    </div>
+                    <div class="pf-v5-l-flex__item">
+                      <section>{{ article.summary }}</section>
+                    </div>
+                  </div>
+                  <div class="pf-v5-l-flex pf-m-wrap">
+                    <!-- -->
+                    <!-- <div class="pf-v5-l-flex pf-m-space-items-xs">
+                      <div class="pf-v5-l-flex__item">
+                        <i
+                          class="fas fa-code-branch"
+                          aria-hidden="true"
+                        ></i>
+                      </div>
+                      <div class="pf-v5-l-flex__item">
+                        <span>10</span>
+                      </div>
+                    </div>
+                    <div class="pf-v5-l-flex pf-m-space-items-xs">
+                      <div class="pf-v5-l-flex__item">
+                        <i class="fas fa-code" aria-hidden="true"></i>
+                      </div>
+                      <div class="pf-v5-l-flex__item">
+                        <span>4</span>
+                      </div>
+                    </div>
+                    <div class="pf-v5-l-flex pf-m-space-items-xs">
+                      <div class="pf-v5-l-flex__item">
+                        <i class="fas fa-cube" aria-hidden="true"></i>
+                      </div>
+                      <div class="pf-v5-l-flex__item">
+                        <span>5</span>
+                      </div>
+                    </div> -->
+                    <div class="pf-v5-l-flex__item">Published: <time datetime="{{ article.date.isoformat() }}"> {{ article.locale_date }} </time></div>
+                  </div>
+                </div>
+              </div>
+              <!-- <div
+                class="pf-v5-c-data-list__cell pf-m-align-right pf-m-no-fill"
+              </div> -->
+            </div>
+          </div>
+        </li>
+{% endfor %}
+        </ul>
+    </div>
+</div>
+    </div>
+  </div>
+</section>
+
+<!-- TODO: Update the pagination -->
+{% if articles_page.has_other_pages() %}
+    {% include 'pagination.html' %}
+{% endif %}
+
+{% endblock content %}

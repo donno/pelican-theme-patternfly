@@ -1,0 +1,437 @@
+<!-- This is not hooked up. The style is almost there to be useful for indices.
+
+It could be used for:
+- Index
+- Posts by given author
+- Posts by a tag.
+
+However, it probably wouldn't be completely static, it probably would require
+an index.
+-->
+<div class="pf-v5-c-toolbar__content">
+    <div class="pf-v5-c-toolbar__content-section pf-m-nowrap">
+      <div
+        class="pf-v5-c-toolbar__group pf-m-toggle-group pf-m-show-on-xl"
+      >
+        <div class="pf-v5-c-toolbar__toggle">
+          <button
+            class="pf-v5-c-menu-toggle pf-m-plain"
+            type="button"
+            aria-expanded="false"
+            aria-label="Show filters"
+            aria-controls="primary-detail-collapsed-example-drawer-toolbar-expandable-content"
+          >
+            <i class="fas fa-filter" aria-hidden="true"></i>
+          </button>
+        </div>
+
+        <div class="pf-v5-c-toolbar__item pf-m-search-filter">
+          <div
+            class="pf-v5-c-input-group"
+            aria-label="search filter"
+            role="group"
+          >
+            <div class="pf-v5-c-input-group__item">
+              <button
+                class="pf-v5-c-menu-toggle"
+                type="button"
+                aria-expanded="false"
+                id="primary-detail-collapsed-example-drawer-toolbar-search-filter-menu"
+              >
+                <span class="pf-v5-c-menu-toggle__icon">
+                  <i class="fas fa-filter" aria-hidden="true"></i>
+                </span>
+                <span class="pf-v5-c-menu-toggle__text">Name</span>
+                <span class="pf-v5-c-menu-toggle__controls">
+                  <span class="pf-v5-c-menu-toggle__toggle-icon">
+                    <i
+                      class="fas fa-caret-down"
+                      aria-hidden="true"
+                    ></i>
+                  </span>
+                </span>
+              </button>
+            </div>
+            <div class="pf-v5-c-input-group__item pf-m-fill">
+              <div class="pf-v5-c-text-input-group">
+                <div
+                  class="pf-v5-c-text-input-group__main pf-m-icon"
+                >
+                  <span class="pf-v5-c-text-input-group__text">
+                    <span class="pf-v5-c-text-input-group__icon">
+                      <i class="fas fa-fw fa-search"></i>
+                    </span>
+                    <input
+                      class="pf-v5-c-text-input-group__text-input"
+                      type="text"
+                      placeholder="Filter by name"
+                      value
+                      aria-label="Search input"
+                    />
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="pf-v5-c-toolbar__group pf-m-filter-group">
+          <div class="pf-v5-c-toolbar__item">
+            <div class="pf-v5-c-select">
+              <span
+                id="primary-detail-collapsed-example-drawer-toolbar-select-checkbox-status-label"
+                hidden
+              >Choose many</span>
+
+              <button
+                class="pf-v5-c-select__toggle"
+                type="button"
+                id="primary-detail-collapsed-example-drawer-toolbar-select-checkbox-status-toggle"
+                aria-haspopup="true"
+                aria-expanded="false"
+                aria-labelledby="primary-detail-collapsed-example-drawer-toolbar-select-checkbox-status-label primary-detail-collapsed-example-drawer-toolbar-select-checkbox-status-toggle"
+              >
+                <div class="pf-v5-c-select__toggle-wrapper">
+                  <span class="pf-v5-c-select__toggle-text">Status</span>
+                </div>
+                <span class="pf-v5-c-select__toggle-arrow">
+                  <i class="fas fa-caret-down" aria-hidden="true"></i>
+                </span>
+              </button>
+
+              <div class="pf-v5-c-select__menu" hidden>
+                <fieldset
+                  class="pf-v5-c-select__menu-fieldset"
+                  aria-label="Select input"
+                >
+                  <label
+                    class="pf-v5-c-check pf-v5-c-select__menu-item pf-m-description"
+                    id="primary-detail-collapsed-example-drawer-toolbar-select-checkbox-status-active"
+                    for="primary-detail-collapsed-example-drawer-toolbar-select-checkbox-status-active-input"
+                  >
+                    <input
+                      class="pf-v5-c-check__input"
+                      type="checkbox"
+                      aria-describedby="primary-detail-collapsed-example-drawer-toolbar-select-checkbox-status-active-description"
+                      id="primary-detail-collapsed-example-drawer-toolbar-select-checkbox-status-active-input"
+                      name="primary-detail-collapsed-example-drawer-toolbar-select-checkbox-status-active-input"
+                    />
+                    <span class="pf-v5-c-check__label">Active</span>
+                    <span
+                      class="pf-v5-c-check__description"
+                      id="primary-detail-collapsed-example-drawer-toolbar-select-checkbox-status-active-description"
+                    >This is a description</span>
+                  </label>
+                  <label
+                    class="pf-v5-c-check pf-v5-c-select__menu-item pf-m-description"
+                    id="primary-detail-collapsed-example-drawer-toolbar-select-checkbox-status-canceled"
+                    for="primary-detail-collapsed-example-drawer-toolbar-select-checkbox-status-canceled-input"
+                  >
+                    <input
+                      class="pf-v5-c-check__input"
+                      type="checkbox"
+                      aria-describedby="primary-detail-collapsed-example-drawer-toolbar-select-checkbox-status-canceled-description"
+                      id="primary-detail-collapsed-example-drawer-toolbar-select-checkbox-status-canceled-input"
+                      name="primary-detail-collapsed-example-drawer-toolbar-select-checkbox-status-canceled-input"
+                    />
+                    <span class="pf-v5-c-check__label">Canceled</span>
+                    <span
+                      class="pf-v5-c-check__description"
+                      id="primary-detail-collapsed-example-drawer-toolbar-select-checkbox-status-canceled-description"
+                    >This is a really long description that describes the menu item. This is a really long description that describes the menu item.</span>
+                  </label>
+                  <label
+                    class="pf-v5-c-check pf-v5-c-select__menu-item"
+                    id="primary-detail-collapsed-example-drawer-toolbar-select-checkbox-status-paused"
+                    for="primary-detail-collapsed-example-drawer-toolbar-select-checkbox-status-paused-input"
+                  >
+                    <input
+                      class="pf-v5-c-check__input"
+                      type="checkbox"
+                      id="primary-detail-collapsed-example-drawer-toolbar-select-checkbox-status-paused-input"
+                      name="primary-detail-collapsed-example-drawer-toolbar-select-checkbox-status-paused-input"
+                    />
+                    <span class="pf-v5-c-check__label">Paused</span>
+                  </label>
+                  <label
+                    class="pf-v5-c-check pf-v5-c-select__menu-item"
+                    id="primary-detail-collapsed-example-drawer-toolbar-select-checkbox-status-warning"
+                    for="primary-detail-collapsed-example-drawer-toolbar-select-checkbox-status-warning-input"
+                  >
+                    <input
+                      class="pf-v5-c-check__input"
+                      type="checkbox"
+                      id="primary-detail-collapsed-example-drawer-toolbar-select-checkbox-status-warning-input"
+                      name="primary-detail-collapsed-example-drawer-toolbar-select-checkbox-status-warning-input"
+                    />
+                    <span class="pf-v5-c-check__label">Warning</span>
+                  </label>
+                  <label
+                    class="pf-v5-c-check pf-v5-c-select__menu-item"
+                    id="primary-detail-collapsed-example-drawer-toolbar-select-checkbox-status-restarted"
+                    for="primary-detail-collapsed-example-drawer-toolbar-select-checkbox-status-restarted-input"
+                  >
+                    <input
+                      class="pf-v5-c-check__input"
+                      type="checkbox"
+                      id="primary-detail-collapsed-example-drawer-toolbar-select-checkbox-status-restarted-input"
+                      name="primary-detail-collapsed-example-drawer-toolbar-select-checkbox-status-restarted-input"
+                    />
+                    <span class="pf-v5-c-check__label">Restarted</span>
+                  </label>
+                </fieldset>
+              </div>
+            </div>
+          </div>
+          <div class="pf-v5-c-toolbar__item">
+            <div class="pf-v5-c-select">
+              <span
+                id="primary-detail-collapsed-example-drawer-toolbar-select-checkbox-risk-label"
+                hidden
+              >Choose many</span>
+
+              <button
+                class="pf-v5-c-select__toggle"
+                type="button"
+                id="primary-detail-collapsed-example-drawer-toolbar-select-checkbox-risk-toggle"
+                aria-haspopup="true"
+                aria-expanded="false"
+                aria-labelledby="primary-detail-collapsed-example-drawer-toolbar-select-checkbox-risk-label primary-detail-collapsed-example-drawer-toolbar-select-checkbox-risk-toggle"
+              >
+                <div class="pf-v5-c-select__toggle-wrapper">
+                  <span class="pf-v5-c-select__toggle-text">Risk</span>
+                </div>
+                <span class="pf-v5-c-select__toggle-arrow">
+                  <i class="fas fa-caret-down" aria-hidden="true"></i>
+                </span>
+              </button>
+
+              <div class="pf-v5-c-select__menu" hidden>
+                <fieldset
+                  class="pf-v5-c-select__menu-fieldset"
+                  aria-label="Select input"
+                >
+                  <label
+                    class="pf-v5-c-check pf-v5-c-select__menu-item pf-m-description"
+                    id="primary-detail-collapsed-example-drawer-toolbar-select-checkbox-risk-active"
+                    for="primary-detail-collapsed-example-drawer-toolbar-select-checkbox-risk-active-input"
+                  >
+                    <input
+                      class="pf-v5-c-check__input"
+                      type="checkbox"
+                      aria-describedby="primary-detail-collapsed-example-drawer-toolbar-select-checkbox-risk-active-description"
+                      id="primary-detail-collapsed-example-drawer-toolbar-select-checkbox-risk-active-input"
+                      name="primary-detail-collapsed-example-drawer-toolbar-select-checkbox-risk-active-input"
+                    />
+                    <span class="pf-v5-c-check__label">Active</span>
+                    <span
+                      class="pf-v5-c-check__description"
+                      id="primary-detail-collapsed-example-drawer-toolbar-select-checkbox-risk-active-description"
+                    >This is a description</span>
+                  </label>
+                  <label
+                    class="pf-v5-c-check pf-v5-c-select__menu-item pf-m-description"
+                    id="primary-detail-collapsed-example-drawer-toolbar-select-checkbox-risk-canceled"
+                    for="primary-detail-collapsed-example-drawer-toolbar-select-checkbox-risk-canceled-input"
+                  >
+                    <input
+                      class="pf-v5-c-check__input"
+                      type="checkbox"
+                      aria-describedby="primary-detail-collapsed-example-drawer-toolbar-select-checkbox-risk-canceled-description"
+                      id="primary-detail-collapsed-example-drawer-toolbar-select-checkbox-risk-canceled-input"
+                      name="primary-detail-collapsed-example-drawer-toolbar-select-checkbox-risk-canceled-input"
+                    />
+                    <span class="pf-v5-c-check__label">Canceled</span>
+                    <span
+                      class="pf-v5-c-check__description"
+                      id="primary-detail-collapsed-example-drawer-toolbar-select-checkbox-risk-canceled-description"
+                    >This is a really long description that describes the menu item. This is a really long description that describes the menu item.</span>
+                  </label>
+                  <label
+                    class="pf-v5-c-check pf-v5-c-select__menu-item"
+                    id="primary-detail-collapsed-example-drawer-toolbar-select-checkbox-risk-paused"
+                    for="primary-detail-collapsed-example-drawer-toolbar-select-checkbox-risk-paused-input"
+                  >
+                    <input
+                      class="pf-v5-c-check__input"
+                      type="checkbox"
+                      id="primary-detail-collapsed-example-drawer-toolbar-select-checkbox-risk-paused-input"
+                      name="primary-detail-collapsed-example-drawer-toolbar-select-checkbox-risk-paused-input"
+                    />
+                    <span class="pf-v5-c-check__label">Paused</span>
+                  </label>
+                  <label
+                    class="pf-v5-c-check pf-v5-c-select__menu-item"
+                    id="primary-detail-collapsed-example-drawer-toolbar-select-checkbox-risk-warning"
+                    for="primary-detail-collapsed-example-drawer-toolbar-select-checkbox-risk-warning-input"
+                  >
+                    <input
+                      class="pf-v5-c-check__input"
+                      type="checkbox"
+                      id="primary-detail-collapsed-example-drawer-toolbar-select-checkbox-risk-warning-input"
+                      name="primary-detail-collapsed-example-drawer-toolbar-select-checkbox-risk-warning-input"
+                    />
+                    <span class="pf-v5-c-check__label">Warning</span>
+                  </label>
+                  <label
+                    class="pf-v5-c-check pf-v5-c-select__menu-item"
+                    id="primary-detail-collapsed-example-drawer-toolbar-select-checkbox-risk-restarted"
+                    for="primary-detail-collapsed-example-drawer-toolbar-select-checkbox-risk-restarted-input"
+                  >
+                    <input
+                      class="pf-v5-c-check__input"
+                      type="checkbox"
+                      id="primary-detail-collapsed-example-drawer-toolbar-select-checkbox-risk-restarted-input"
+                      name="primary-detail-collapsed-example-drawer-toolbar-select-checkbox-risk-restarted-input"
+                    />
+                    <span class="pf-v5-c-check__label">Restarted</span>
+                  </label>
+                </fieldset>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- <div class="pf-v5-c-toolbar__item">
+        <button
+          class="pf-v5-c-button pf-m-plain"
+          type="button"
+          aria-label="Sort"
+        >
+          <i
+            class="fas fa-sort-amount-down pf-v5-m-mirror-inline-rtl"
+            aria-hidden="true"
+          ></i>
+        </button>
+      </div> -->
+
+      <div
+        class="pf-v5-c-overflow-menu"
+        id="primary-detail-collapsed-example-drawer-toolbar-overflow-menu"
+      >
+        <div class="pf-v5-c-overflow-menu__control">
+          <div class="pf-v5-c-dropdown">
+            <button
+              class="pf-v5-c-button pf-v5-c-dropdown__toggle pf-m-plain"
+              type="button"
+              id="primary-detail-collapsed-example-drawer-toolbar-overflow-menu-dropdown-toggle"
+              aria-label="Dropdown with additional options"
+              aria-expanded="false"
+            >
+              <i class="fas fa-ellipsis-v" aria-hidden="true"></i>
+            </button>
+            <ul
+              class="pf-v5-c-dropdown__menu"
+              role="menu"
+              aria-labelledby="primary-detail-collapsed-example-drawer-toolbar-overflow-menu-dropdown-toggle"
+              hidden
+            >
+              <li role="none">
+                <button
+                  role="menuitem"
+                  class="pf-v5-c-dropdown__menu-item"
+                >Action 7</button>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- TODO Handle pagination
+      This may be good to move to the pagination.html.
+      -->
+<!--
+      <div class="pf-v5-c-toolbar__item pf-m-pagination">
+        <div class="pf-v5-c-pagination pf-m-compact">
+          <div class="pf-v5-c-options-menu">
+            <button
+              class="pf-v5-c-options-menu__toggle pf-m-text pf-m-plain"
+              type="button"
+              id="primary-detail-collapsed-example-drawer-toolbar-top-pagination-toggle"
+              aria-haspopup="listbox"
+              aria-expanded="false"
+            >
+              <span class="pf-v5-c-options-menu__toggle-text">
+                <b>1 - 10</b>&nbsp;of&nbsp;
+                <b>36</b>
+              </span>
+              <div class="pf-v5-c-options-menu__toggle-icon">
+                <i class="fas fa-caret-down" aria-hidden="true"></i>
+              </div>
+            </button>
+            <ul
+              class="pf-v5-c-options-menu__menu"
+              role="menu"
+              aria-labelledby="primary-detail-collapsed-example-drawer-toolbar-top-pagination-toggle"
+              hidden
+            >
+              <li role="none">
+                <button
+                  class="pf-v5-c-options-menu__menu-item"
+                  type="button"
+                  role="menuitem"
+                >5 per page</button>
+              </li>
+              <li role="none">
+                <button
+                  class="pf-v5-c-options-menu__menu-item"
+                  type="button"
+                  role="menuitem"
+                >
+                  10 per page
+                  <div
+                    class="pf-v5-c-options-menu__menu-item-icon"
+                  >
+                    <i class="fas fa-check" aria-hidden="true"></i>
+                  </div>
+                </button>
+              </li>
+              <li role="none">
+                <button
+                  class="pf-v5-c-options-menu__menu-item"
+                  type="button"
+                  role="menuitem"
+                >20 per page</button>
+              </li>
+            </ul>
+          </div>
+          <nav
+            class="pf-v5-c-pagination__nav"
+            aria-label="Toolbar top pagination"
+          >
+            <div
+              class="pf-v5-c-pagination__nav-control pf-m-prev"
+            >
+              <button
+                class="pf-v5-c-button pf-m-plain"
+                type="button"
+                disabled
+                aria-label="Go to previous page"
+              >
+                <i class="fas fa-angle-left" aria-hidden="true"></i>
+              </button>
+            </div>
+            <div
+              class="pf-v5-c-pagination__nav-control pf-m-next"
+            >
+              <button
+                class="pf-v5-c-button pf-m-plain"
+                type="button"
+                aria-label="Go to next page"
+              >
+                <i class="fas fa-angle-right" aria-hidden="true"></i>
+              </button>
+            </div>
+          </nav>
+        </div>
+      </div>
+    </div> -->
+
+    <div
+      class="pf-v5-c-toolbar__expandable-content pf-m-hidden"
+      id="primary-detail-collapsed-example-drawer-toolbar-expandable-content"
+      hidden
+    ></div>
+  </div>
+</div>
