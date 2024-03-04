@@ -17,6 +17,10 @@
             id="primary-detail-collapsed-example-drawer-toolbar"
           >
             <!-- Toolbar would go here -->
+          {% if articles_page.has_other_pages() %}
+              {% include 'pagination.html' %}
+          {% endif %}
+
           <ul
             class="pf-v5-c-data-list"
             role="list"

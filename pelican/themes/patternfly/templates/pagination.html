@@ -1,17 +1,128 @@
 {% if DEFAULT_PAGINATION %}
 {% set first_page = articles_paginator.page(1) %}
 {% set last_page = articles_paginator.page(articles_paginator.num_pages) %}
-<nav>
-  <ul>
-    {% if articles_page.has_previous() %}
-        <li><a href="{{ SITEURL }}/{{ first_page.url }}">&Lang;</a></li>
-        <li><a href="{{ SITEURL }}/{{ articles_previous_page.url }}">&lang;</a></li>
+
+<div class="pf-v5-c-pagination">
+  <div class="pf-v5-c-pagination__total-items">
+    <b>{{ articles_page.number }} - {{ articles_page.number + articles_paginator.per_page }}</b>&nbsp;of&nbsp;
+    <b>{{ articles_paginator.num_pages }}</li></b>
+  </div>
+  <div class="pf-v5-c-options-menu">
+    <button
+      class="pf-v5-c-options-menu__toggle pf-m-text pf-m-plain"
+      type="button"
+      id="pagination-options-menu-top-example-toggle"
+      aria-haspopup="listbox"
+      aria-expanded="false"
+    >
+      <span class="pf-v5-c-options-menu__toggle-text">
+        <b>{{ articles_page.number }} - {{ articles_page.number + articles_paginator.per_page }}</b>&nbsp;of&nbsp;
+        <b>{{ articles_paginator.count }}</li></b>
+      </span>
+      <div class="pf-v5-c-options-menu__toggle-icon">
+        <i class="fas fa-caret-down" aria-hidden="true"></i>
+      </div>
+    </button>
+    <!-- Not appliable, as it is statically generated you can't change it
+      All this could show is that there are N per page.
+    -->
+    <!-- <ul
+      class="pf-v5-c-options-menu__menu"
+      role="menu"
+      aria-labelledby="pagination-options-menu-top-example-toggle"
+      hidden
+    >
+      <li role="none">
+        <button
+          class="pf-v5-c-options-menu__menu-item"
+          type="button"
+          role="menuitem"
+        >5 per page</button>
+      </li>
+      <li role="none">
+        <button
+          class="pf-v5-c-options-menu__menu-item"
+          type="button"
+          role="menuitem"
+        >
+          10 per page
+          <div class="pf-v5-c-options-menu__menu-item-icon">
+            <i class="fas fa-check" aria-hidden="true"></i>
+          </div>
+        </button>
+      </li>
+      <li role="none">
+        <button
+          class="pf-v5-c-options-menu__menu-item"
+          type="button"
+          role="menuitem"
+        >20 per page</button>
+      </li>
+    </ul> -->
+  </div>
+
+  <nav
+    class="pf-v5-c-pagination__nav"
+    aria-label="Pagination"
+  >
+    <!-- TODO: Disable the links if there is no first or last instead of 
+    making them disappear
+  -->
+{% if articles_page.has_previous() %}
+    <div class="pf-v5-c-pagination__nav-control pf-m-first">
+      <a
+        class="pf-v5-c-button pf-m-plain"
+        href="{{ SITEURL }}/{{ first_page.url }}"
+        aria-label="Go to first page"
+      >
+        <i class="fas fa-angle-double-left" aria-hidden="true"></i>
+    </a>
+    </div>
+    <div class="pf-v5-c-pagination__nav-control pf-m-prev">
+      <a
+        class="pf-v5-c-button pf-m-plain"
+        href="{{ SITEURL }}/{{ articles_previous_page.url }}"
+        aria-label="Go to previous page"
+      >
+        <i class="fas fa-angle-left" aria-hidden="true"></i>
+    </a>
+    </div>
+{% endif %}
+
+    <div class="pf-v5-c-pagination__nav-page-select">
+      <span class="pf-v5-c-form-control">
+        <input
+          aria-label="Current page"
+          type="number"
+          min="1"
+          max="{{ articles_paginator.num_pages }}"
+          value="{{ articles_page.number }}"
+        />
+      </span>
+      <span aria-hidden="true">of {{ articles_paginator.num_pages }}</span>
+    </div>
+{% if articles_page.has_next() %}
+    <div class="pf-v5-c-pagination__nav-control pf-m-next">
+      <a
+        class="pf-v5-c-button pf-m-plain"
+        href="{{ SITEURL }}/{{ articles_next_page.url }}"
+        aria-label="Go to next page"
+      >
+        <i class="fas fa-angle-right" aria-hidden="true"></i>
+    </a>
+    </div>
+    <div class="pf-v5-c-pagination__nav-control pf-m-last">
+      <a
+        class="pf-v5-c-button pf-m-plain"
+        href="{{ SITEURL }}/{{ last_page.url }}"
+        aria-label="Go to last page"
+      >
+        <i class="fas fa-angle-double-right" aria-hidden="true"></i>
+    </a>
+    </div>
     {% endif %}
-    <li>Page {{ articles_page.number }} / {{ articles_paginator.num_pages }}</li>
-    {% if articles_page.has_next() %}
-        <li><a href="{{ SITEURL }}/{{ articles_next_page.url }}">&rang;</a></li>
-        <li><a href="{{ SITEURL }}/{{ last_page.url }}">&Rang;</a></li>
-    {% endif %}
-  </ul>
-</nav>
+  </nav>
+</div>
+
+
 {% endif %}
