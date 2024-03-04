@@ -31,6 +31,22 @@
     </h1>
  {% import 'translations.html' as translations with context %}
  {{ translations.translations_for(article) }}
+
+<!-- The attributes were designed for a special Pelican reader. -->
+{% if article.attributes %}
+    <dl class="pf-v5-c-description-list pf-m-horizontal pf-m-3-col-on-lg">
+{% for key, value in article.attributes.items() %}
+      <div class="pf-v5-c-description-list__group">
+        <dt class="pf-v5-c-description-list__term">
+          <span class="pf-v5-c-description-list__text">{{ key }}</span>
+        </dt>
+        <dd class="pf-v5-c-description-list__description">
+          <div class="pf-v5-c-description-list__text">{{ value }}</div>
+        </dd>
+      </div>
+{% endfor %}
+    </dl>
+{% endif %}
   </header>
   {{ article.content }}
   <footer>
