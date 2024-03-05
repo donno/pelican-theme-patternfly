@@ -150,7 +150,7 @@
           aria-label="Global"
         >
           <ul class="pf-v5-c-nav__list" role="list">
-            <li class="pf-v5-c-nav__item">
+            <!-- <li class="pf-v5-c-nav__item">
               <a href="#" class="pf-v5-c-nav__link">System panel</a>
             </li>
             <li class="pf-v5-c-nav__item">
@@ -165,10 +165,15 @@
             </li>
             <li class="pf-v5-c-nav__item">
               <a href="#" class="pf-v5-c-nav__link">Network services</a>
-            </li>
+            </li>-->
             <li class="pf-v5-c-nav__item">
-              <a href="#" class="pf-v5-c-nav__link">Server</a>
+              <a href="{{ SITEURL }}/authors.html" class="pf-v5-c-nav__link">Authors</a>
             </li>
+            <!-- Showing top N authors here might be nice when there is more than
+                one author.
+
+                Consider hiding the authors page if there is only one author.
+            -->
         <!-- TOOD: Consider adding the headings.-->
         {% for title, link in MENUITEMS %}
           <li class="pf-v5-c-nav__item">
