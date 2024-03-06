@@ -22,9 +22,9 @@ The theme is tested against the sources of the following sites/projects:
 
 * [samples project][1] from pelican.
 * [this-week-in-rust][2] from [https://this-week-in-rust.org/][4]
-** Includes multiple index pages.
-** Only uses a single author - TWiR Contributors.
-** Only includes three tags - programming, rust and this-week-in-rust.
+    * Includes multiple index pages.
+    * Only uses a single author - TWiR Contributors.
+    * Only includes three tags - programming, rust and this-week-in-rust.
 
 
 ### Commands
